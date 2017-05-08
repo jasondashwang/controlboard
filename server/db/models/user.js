@@ -1,9 +1,9 @@
 'use strict';
-var crypto = require('crypto');
-var _ = require('lodash');
-var Sequelize = require('sequelize');
+let crypto = require('crypto');
+let _ = require('lodash');
+let Sequelize = require('sequelize');
 
-var db = require('../_db');
+let db = require('../_db');
 
 module.exports = db.define('user', {
     email: {
@@ -23,6 +23,21 @@ module.exports = db.define('user', {
     },
     google_id: {
         type: Sequelize.STRING
+    },
+    username: {
+        type: Sequelize.STRING
+    },
+    firstName: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    lastName: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    photoUrl: {
+        type: Sequelize.STRING,
+        defaultValue: "google.com"
     }
 }, {
     instanceMethods: {

@@ -1,8 +1,8 @@
-var path = require('path');
-var Sequelize = require('sequelize');
+let path = require('path');
+let Sequelize = require('sequelize');
 
-var env = require(path.join(__dirname, '../env'));
-var db = new Sequelize(env.DATABASE_URL, {
+let env = require(path.join(__dirname, '../env'));
+let db = new Sequelize(env.DATABASE_URL, {
   logging: env.LOGGING ? console.log : false,
   native: env.NATIVE
 });
